@@ -28,7 +28,7 @@ export default function Register() {
       JSON.stringify([...users, newUser])
     );
 
-    alert("Registrazione completata 🎉");
+    alert("Registrazione completata con successo! Benvenuto, " + name);
 
     navigate("/login");
   };

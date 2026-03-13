@@ -18,13 +18,13 @@ export default function Login() {
     );
 
     if (!user) {
-      alert("Email o password errati ❌");
+      alert("Email o password errati ");
       return;
     }
 
     localStorage.setItem("loggedUser", JSON.stringify(user));
 
-    alert("Login effettuato! 🎉");
+    alert("Login effettuato! Benvenuto, " + user.name);
 
     navigate("/destinations");
   };

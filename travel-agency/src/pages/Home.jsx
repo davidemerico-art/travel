@@ -15,11 +15,14 @@ export default function Home() {
         <div className="ml-20 bg-black/60 p-10 rounded-xl text-white max-w-lg">
 
           <h1 className="text-5xl font-bold mb-4">
-            Scopri il Mondo 🌍
+            Scopri il Mondo con TravelDream
+           
           </h1>
 
           <p className="mb-6">
-            Viaggi esclusivi e itinerari unici creati per te.
+             scegli la tua prossima avventura! <br />
+            Viaggi esclusivi e itinerari unici creati per te.<br />
+             
           </p>
 
           <div className="flex gap-4">

@@ -8,7 +8,7 @@ export default function Navbar() {
       </h1>
 
       <div className="flex gap-6 font-medium">
-        <Link to="/">Home</Link>
+        <Link to="/CreaItinerario">Crea Itinerario</Link>
         <Link to="/destinations">Destinazioni</Link>
       </div>
     </nav>
