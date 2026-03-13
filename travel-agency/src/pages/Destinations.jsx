@@ -28,7 +28,7 @@ const trips = [
 ];
 
 export default function Destinations() {
-  const navigate = useNavigate(); // 👈 QUI
+  const navigate = useNavigate(); 
 
   return (
     <div className="p-10 bg-gray-100 min-h-screen">
