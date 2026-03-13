@@ -6,80 +6,95 @@ export default function CreaItinerario() {
   const navigate = useNavigate();
 
   const [titolo, setTitolo] = useState("");
-  const [descrizione, setDescrizione] = useState("");
   const [giorni, setGiorni] = useState("");
   const [prezzo, setPrezzo] = useState("");
+  const [img, setImg] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Creo nuovo itinerario con stessa struttura di trips.js
     const nuovoViaggio = {
       id: Date.now(),
       title: titolo,
-      description: descrizione,
       days: Number(giorni),
-      price: Number(prezzo)
+      price: Number(prezzo),
+      img: img,
+      description: "Descrizione personalizzata."
     };
 
-    console.log("Nuovo itinerario:", nuovoViaggio);
+    // Recupero viaggi già salvati
+    const tripsSalvati = JSON.parse(localStorage.getItem("trips")) || [];
+
+    // Salvo il nuovo viaggio
+    localStorage.setItem(
+      "trips",
+      JSON.stringify([...tripsSalvati, nuovoViaggio])
+    );
 
     alert("Itinerario creato con successo! 🎉");
 
+    // Torno alle destinazioni
     navigate("/destinations");
   };
 
   return (
-    <div className="p-10 max-w-xl mx-auto">
+    <div className="min-h-screen bg-gray-100 flex justify-center items-center p-6">
 
-      <h1 className="text-3xl font-bold mb-6">
-        Crea Nuovo Itinerario
-      </h1>
+      <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-lg">
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+        <h1 className="text-3xl font-bold mb-6 text-center">
+          Crea Nuovo Itinerario
+        </h1>
 
-        <input
-          type="text"
-          placeholder="Titolo"
-          className="border p-2 w-full"
-          value={titolo}
-          onChange={(e) => setTitolo(e.target.value)}
-          required
-        />
+        <form onSubmit={handleSubmit} className="space-y-4">
 
-        <textarea
-          placeholder="Descrizione"
-          className="border p-2 w-full"
-          value={descrizione}
-          onChange={(e) => setDescrizione(e.target.value)}
-          required
-        />
+          <input
+            type="text"
+            placeholder="Titolo"
+            className="border p-3 w-full rounded"
+            value={titolo}
+            onChange={(e) => setTitolo(e.target.value)}
+            required
+          />
 
-        <input
-          type="number"
-          placeholder="Durata (giorni)"
-          className="border p-2 w-full"
-          value={giorni}
-          onChange={(e) => setGiorni(e.target.value)}
-          required
-        />
+          <input
+            type="number"
+            placeholder="Durata (giorni)"
+            className="border p-3 w-full rounded"
+            value={giorni}
+            onChange={(e) => setGiorni(e.target.value)}
+            required
+          />
 
-        <input
-          type="number"
-          placeholder="Prezzo"
-          className="border p-2 w-full"
-          value={prezzo}
-          onChange={(e) => setPrezzo(e.target.value)}
-          required
-        />
+          <input
+            type="number"
+            placeholder="Prezzo"
+            className="border p-3 w-full rounded"
+            value={prezzo}
+            onChange={(e) => setPrezzo(e.target.value)}
+            required
+          />
 
-        <button
-          type="submit"
-          className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
-        >
-          Salva Itinerario
-        </button>
+          <input
+            type="text"
+            placeholder="URL Immagine (es: salento1.jpg)"
+            className="border p-3 w-full rounded"
+            value={img}
+            onChange={(e) => setImg(e.target.value)}
+            required
+          />
 
-      </form>
+          <button
+            type="submit"
+            className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition"
+          >
+            Salva Itinerario
+          </button>
+
+        </form>
+
+      </div>
 
     </div>
   );

@@ -25,17 +25,17 @@ export default function Home() {
           <div className="flex gap-4">
 
             <Link
-              to="/destinations"
+              to="/login"
               className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-800 transition"
             >
-              Vedi Destinazioni
+              accedi
             </Link>
 
             <Link
-              to="/create-itinerary"
-              className="bg-green-600 px-6 py-3 rounded-lg hover:bg-green-800 transition"
+              to="/register"
+              className="bg-sky-700 px-6 py-3 rounded-lg hover:bg-sky-900 transition"
             >
-              Crea Itinerario
+              Crea Account
             </Link>
 
           </div>

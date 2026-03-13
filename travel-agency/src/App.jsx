@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Destinations from "./pages/Destinations";
 import TripDetails from "./pages/TripDetails";
 import CreaItinerario from "./pages/CreaItinerario";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 export default function App() {
   return (
@@ -23,6 +25,10 @@ export default function App() {
 
         {/* CREA ITINERARIO */}
         <Route path="/create-itinerary" element={<CreaItinerario />} />
+        {/* LOGIN */}
+        <Route path="/login" element={<Login />} />
+        {/* REGISTER */}
+        <Route path="/register" element={<Register />} />
       </Routes>
 
       <Footer />
