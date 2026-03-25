@@ -24,7 +24,7 @@ export default function TripDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Pagamento inviato con successo! 🎉");
+    alert("Pagamento inviato con successo! Grazie per aver scelto TravelDream.");
   };
 
   return (

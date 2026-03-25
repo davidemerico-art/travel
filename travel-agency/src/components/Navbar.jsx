@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-gray-900 dark:bg-gray-800     text-white dark:text-black shadow-md p-4 flex justify-between items-center transition-colors">
+    <nav className="bg-gray-900 dark:bg-gray-800  text-white dark:text-black shadow-md p-4 flex justify-between items-center transition-colors">
 
       <h1 className="font-bold text-xl text-blue-600">
         TravelDream
