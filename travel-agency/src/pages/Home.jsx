@@ -29,14 +29,14 @@ export default function Home() {
 
             <Link
               to="/login"
-              className="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-800 transition"
+              className="bg-red-200 px-6 py-3 rounded-lg hover:bg-orange-800 transition"
             >
               accedi
             </Link>
 
             <Link
               to="/register"
-              className="bg-sky-700 px-6 py-3 rounded-lg hover:bg-sky-900 transition"
+              className="bg-red-300 px-6 py-3 rounded-lg hover:bg-red-800 transition"
             >
               Crea Account
             </Link>

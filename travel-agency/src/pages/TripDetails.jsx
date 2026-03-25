@@ -6,7 +6,6 @@ export default function TripDetails() {
   const { id } = useParams();
 
   const savedTrips = JSON.parse(localStorage.getItem("trips")) || [];
-
   const allTrips = [...defaultTrips, ...savedTrips];
 
   const trip = allTrips.find((t) => t.id === Number(id));
@@ -25,7 +24,7 @@ export default function TripDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Pagamento inviato con successo! ");
+    alert("Pagamento inviato con successo! 🎉");
   };
 
   return (
@@ -49,8 +48,14 @@ export default function TripDetails() {
         Costo: €{trip.price}
       </p>
 
+      {/* FORM PRENOTAZIONE */}
       <form onSubmit={handleSubmit} className="mt-6">
 
+        <h2 className="text-xl font-semibold mb-4">
+          Prenota il Viaggio
+        </h2>
+
+        {/* DATA ARRIVO */}
         <label className="block mb-1">Data Arrivo</label>
         <input
           type="date"
@@ -60,12 +65,14 @@ export default function TripDetails() {
           required
         />
 
+        {/* DATA FINE */}
         {startDate && (
           <p className="mb-3">
             Data Fine: <strong>{calculateEndDate()}</strong>
           </p>
         )}
 
+        {/* METODO PAGAMENTO */}
         <label className="block mb-1">
           Metodo di Pagamento
         </label>
@@ -81,6 +88,87 @@ export default function TripDetails() {
           <option value="bonifico">Bonifico</option>
         </select>
 
+        {/* PAGAMENTO CARTA */}
+        {metodo === "carta" && (
+          <div className="mb-4">
+
+            <h3 className="font-semibold mb-2">
+              Pagamento con Carta
+            </h3>
+
+            <input
+              type="text"
+              placeholder="Numero carta (16 cifre)"
+              maxLength={16}
+              className="border p-2 w-full mb-2"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="Scadenza MM/AA"
+              className="border p-2 w-full mb-2"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="Nome titolare"
+              className="border p-2 w-full mb-2"
+              required
+            />
+
+            <input
+              type="password"
+              placeholder="CVV"
+              maxLength={3}
+              className="border p-2 w-full"
+              required
+            />
+
+          </div>
+        )}
+
+        {/* PAGAMENTO BONIFICO */}
+        {metodo === "bonifico" && (
+          <div className="mb-4">
+
+            <h3 className="font-semibold mb-2">
+              Bonifico Bancario
+            </h3>
+
+            <input
+              type="text"
+              placeholder="Beneficiario"
+              className="border p-2 w-full mb-2"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="IBAN"
+              className="border p-2 w-full mb-2"
+              required
+            />
+
+            <input
+              type="number"
+              placeholder="Importo"
+              className="border p-2 w-full mb-2"
+              required
+            />
+
+            <input
+              type="text"
+              placeholder="Causale"
+              className="border p-2 w-full"
+              required
+            />
+
+          </div>
+        )}
+
+        {/* BOTTONE */}
         {metodo && (
           <button
             type="submit"

@@ -32,7 +32,7 @@ export default function CreaItinerario() {
       JSON.stringify([...tripsSalvati, nuovoViaggio])
     );
 
-    alert("Itinerario creato con successo! 🎉");
+    alert("Itinerario creato con successo! ");
 
     // Torno alle destinazioni
     navigate("/destinations");
@@ -78,7 +78,7 @@ export default function CreaItinerario() {
 
           <input
             type="text"
-            placeholder="URL Immagine (es: salento1.jpg)"
+            placeholder="URL Immagine "
             className="border p-3 w-full rounded"
             value={img}
             onChange={(e) => setImg(e.target.value)}
@@ -87,7 +87,7 @@ export default function CreaItinerario() {
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-3 rounded hover:bg-green-700 transition"
+            className="w-full bg-teal-400 text-white py-3 rounded hover:bg-teal-700 transition"
           >
             Salva Itinerario
           </button>

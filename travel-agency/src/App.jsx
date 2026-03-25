@@ -15,7 +15,7 @@ export default function App() {
 
       <Routes>
         {/* HOME */}
-        <Route path="/CreaItinerario" element={<CreaItinerario />} />
+        <Route path="/" element={<Home />} />
 
         {/* DESTINAZIONI */}
         <Route path="/destinations" element={<Destinations />} />
